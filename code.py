@@ -8,11 +8,11 @@ graySample=cv2.cvtColor(sample_frame, cv2.COLOR_BGR2GRAY)
 dframe = cv2.absdiff(graySample, grayMedianFrame)
 blurred = cv2.GaussianBlur(dframe, (11,11), 0)
 
-writer = cv2.VideoWriter("output.mp4", 
+writer = cv2.VideoWriter("result.mp4", 
                          cv2.VideoWriter_fourcc(*"MP4V"), 30,(640,480))
 
 #Create a new video stream and get total frame count
-video_stream = cv2.VideoCapture('images/overpass.mp4')
+video_stream = cv2.VideoCapture('highway.mp4')
 total_frames=video_stream.get(cv2.CAP_PROP_FRAME_COUNT)
 total_frames
 
