@@ -9,7 +9,7 @@ dframe = cv2.absdiff(graySample, grayMedianFrame)
 blurred = cv2.GaussianBlur(dframe, (11,11), 0)
 
 writer = cv2.VideoWriter("result.mp4", 
-                         cv2.VideoWriter_fourcc(*"MP4V"), 30,(640,480))
+                         cv2.VideoWriter_fourcc(*"mp4v"), 30,(640,480))
 
 #Create a new video stream and get total frame count
 video_stream = cv2.VideoCapture('highway.mp4')
