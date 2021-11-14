@@ -17,10 +17,13 @@ for fid in frameIds:
 video_stream.release()
 
 medianFrame = np.median(frames, axis=0).astype(dtype=np.uint8)
+avgFrame = np.average(frames, axis=0).astype(dtype=np.uint8)
+sample_frame=frames[0]
 grayMedianFrame = cv2.cvtColor(medianFrame, cv2.COLOR_BGR2GRAY)
 graySample=cv2.cvtColor(sample_frame, cv2.COLOR_BGR2GRAY)
 dframe = cv2.absdiff(graySample, grayMedianFrame)
 blurred = cv2.GaussianBlur(dframe, (11,11), 0)
+
 
 writer = cv2.VideoWriter("result.mp4", 
                          cv2.VideoWriter_fourcc(*"mp4v"), 30,(640,480))
