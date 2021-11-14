@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 
-video_stream = cv2.VideoCapture('images/overpass.mp4')
+video_stream = cv2.VideoCapture('highway.mp4')
 
 # Randomly select 30 frames
 frameIds = video_stream.get(cv2.CAP_PROP_FRAME_COUNT) * np.random.uniform(size=30)
