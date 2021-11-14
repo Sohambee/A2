@@ -1,8 +1,8 @@
 import numpy as np
 import cv2
 
-from IPython.display import Video
 
+medianFrame = np.median(frames, axis=0).astype(dtype=np.uint8)
 grayMedianFrame = cv2.cvtColor(medianFrame, cv2.COLOR_BGR2GRAY)
 graySample=cv2.cvtColor(sample_frame, cv2.COLOR_BGR2GRAY)
 dframe = cv2.absdiff(graySample, grayMedianFrame)
